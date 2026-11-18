@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SupeRR Selector Season 2 - Methodology Report</title>
+<style>
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.6;
+        color: #1e293b;
+        max-width: 960px;
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+    h1 { color: #be185d; border-bottom: 2px solid #fbcfe8; padding-bottom: 8px; }
+    h2 { color: #1e3a8a; border-bottom: 1px solid #e2e8f0; padding-bottom: 6px; margin-top: 35px; }
+    h3 { color: #0f766e; margin-top: 25px; }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 14px;
+    }
+    th, td {
+        border: 1px solid #cbd5e1;
+        padding: 8px 12px;
+        text-align: left;
+    }
+    th {
+        background-color: #f1f5f9;
+        font-weight: 600;
+        color: #334155;
+    }
+    tr:nth-child(even) { background-color: #f8fafc; }
+    .badge {
+        display: inline-block;
+        padding: 2px 8px;
+        border-radius: 9999px;
+        font-size: 12px;
+        font-weight: bold;
+    }
+    .badge-rank { background-color: #fce7f3; color: #be185d; }
+    img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        margin: 15px 0;
+    }
+    .callout {
+        background-color: #eff6ff;
+        border-left: 4px solid #3b82f6;
+        padding: 12px 16px;
+        margin: 20px 0;
+        border-radius: 4px;
+    }
+    code {
+        background-color: #f1f5f9;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: monospace;
+    }
+</style>
+</head>
+<body>
+
+<h1>SupeRR Selector Season 2: Identifying the Most Reliable Players Under Pressure</h1>
+<p><strong>Rajasthan Royals Analytics Challenge — Round 1 Comprehensive Methodology Report</strong><br>
+<em>Dataset:</em> IPL & T20 International Data (2022–2026) | 883 Matches | 200,999 Deliveries</p>
+
+<div class="callout">
+    <strong>Submission Note:</strong> This document accompanies the player selections on Unstop. Select Rank 1 through Rank 10 using the dropdown menus exactly as detailed below.
+</div>
+
+<h2>Official Player Rankings (Unstop Dropdowns)</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Rank</th>
+            <th>Top 10 Batters Under Pressure</th>
+            <th>Key Metric Highlights</th>
+            <th>Top 10 Bowlers Under Pressure</th>
+            <th>Key Metric Highlights</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td><strong>1</strong></td><td><strong>Suryakumar Yadav</strong></td><td>1,753 Runs | 185.90 SR | +29.57 ΔSR</td><td><strong>Sunil Narine</strong></td><td>6.60 Econ | 34 Wkts | +0.42 ΔEcon</td></tr>
+        <tr><td><strong>2</strong></td><td><strong>Dinesh Karthik</strong></td><td>954 Runs | 184.17 SR | +89.13 ΔSR</td><td><strong>Rashid Khan</strong></td><td>89 Wkts | 7.68 Econ | 12.3 BSR</td></tr>
+        <tr><td><strong>3</strong></td><td><strong>Rohit Sharma</strong></td><td>418 Runs | 177.87 SR | 52.25 Avg</td><td><strong>Jasprit Bumrah</strong></td><td>7.50 Econ | 49 Wkts | 35.2% Dots</td></tr>
+        <tr><td><strong>4</strong></td><td><strong>Shashank Singh</strong></td><td>701 Runs | 178.83 SR | 43.81 Avg</td><td><strong>Mohammad Nawaz</strong></td><td>6.17 Econ | 25 Wkts | 11.1 BSR</td></tr>
+        <tr><td><strong>5</strong></td><td><strong>Tim David</strong></td><td>1,419 Runs | 188.95 SR | +29.16 ΔSR</td><td><strong>Mitchell Santner</strong></td><td>7.43 Econ | 42 Wkts | 66.7% Consist</td></tr>
+        <tr><td><strong>6</strong></td><td><strong>Rishabh Pant</strong></td><td>769 Runs | 178.84 SR | +54.76 ΔSR</td><td><strong>Matheesha Pathirana</strong></td><td>61 Wkts | 11.3 BSR | 60.8% Consist</td></tr>
+        <tr><td><strong>7</strong></td><td><strong>Jos Buttler</strong></td><td>1,016 Runs | 179.82 SR | 58.1% Consist</td><td><strong>Varun Chakravarthy</strong></td><td>63 Wkts | 8.36 Econ | 38.4% Dots</td></tr>
+        <tr><td><strong>8</strong></td><td><strong>Quinton de Kock</strong></td><td>490 Runs | 177.54 SR | 40.83 Avg</td><td><strong>Kuldeep Yadav</strong></td><td>51 Wkts | 8.12 Econ | 68.3% Consist</td></tr>
+        <tr><td><strong>9</strong></td><td><strong>Naman Dhir</strong></td><td>515 Runs | 195.08 SR | +48.31 ΔSR</td><td><strong>Ravi Bishnoi</strong></td><td>70 Wkts | 8.52 Econ | 1,105 Balls</td></tr>
+        <tr><td><strong>10</strong></td><td><strong>Tristan Stubbs</strong></td><td>1,158 Runs | 168.07 SR | 41.36 Avg</td><td><strong>Abrar Ahmed</strong></td><td>6.21 Econ | 19 Wkts | 41.3% Dots</td></tr>
+    </tbody>
+</table>
+
+<h2>1. Pressure Definition Architecture</h2>
+<p>Pressure is defined by the sensitivity and volatility of win probability at the delivery level. The system isolates 72,639 high-pressure deliveries (36.1% of the dataset) from 128,360 baseline deliveries (63.9%):</p>
+<ul>
+    <li><strong>Innings 2 (Chasing & Super Overs):</strong> Super overs (Inn 3 & 4), Death overs (balls rem ≤ 30 while game is live and RRR ≤ 24), Escalated chase (RRR ≥ 9.5 post-powerplay), and Wicket depletion (wickets in hand ≤ 4 and runs needed > 15).</li>
+    <li><strong>Innings 1 (Target Setting):</strong> Death overs (overs 16–20) where run expectancy swings are maximal, and Top-order crisis (overs 1–6 with ≥ 3 down, or overs 1–10 with ≥ 4 down).</li>
+    <li><strong>Knockout Stakes:</strong> Knockout fixtures receive a 1.25× multiplier on leverage to reflect elimination consequences.</li>
+</ul>
+
+<h2>2. Performance Measurement & Rating Logic</h2>
+<p>Player reliability is assessed through a multi-dimensional composite index combining:</p>
+<ol>
+    <li><strong>Absolute Efficiency:</strong> Pressure Strike Rate (SR), Pressure Average, Pressure Economy (Econ), and Bowling Strike Rate (BSR).</li>
+    <li><strong>Relative Clutch Delta:</strong> Performance under pressure relative to player baseline (ΔSR = SR_p - SR_base, ΔEcon = Econ_base - Econ_p).</li>
+    <li><strong>Match Consistency:</strong> Repeatable success across matches (% of pressure outings meeting benchmark criteria).</li>
+    <li><strong>Volume & Sample Weighting:</strong> Minimum threshold of 150 pressure balls and Bayesian shrinkage toward the global cohort mean.</li>
+</ol>
+
+<h2>3. Evidence & Analytical Visualizations</h2>
+<h3>Top 10 Batters: Scoring Rate & Clutch Elevation</h3>
+<img src="top_batters_chart.png" alt="Top Batters Chart">
+
+<h3>Top 10 Bowlers: Economy Containment & Wicket Lethality</h3>
+<img src="top_bowlers_chart.png" alt="Top Bowlers Chart">
+
+<h3>Scatter Analysis: Batting Efficiency vs Durability</h3>
+<img src="pressure_batting_scatter.png" alt="Batting Scatter">
+
+<h3>Scatter Analysis: Bowling Economy vs Strike Rate</h3>
+<img src="pressure_bowling_scatter.png" alt="Bowling Scatter">
+
+<h2>4. Full Statistical Tables</h2>
+<h3>Top 10 Batters Under Pressure</h3>
+<table>
+    <thead>
+        <tr><th>Rank</th><th>Batter</th><th>Balls</th><th>Runs</th><th>P_SR</th><th>Base_SR</th><th>ΔSR</th><th>P_Avg</th><th>Bnd%</th><th>Dot%</th><th>Consist%</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>1</td><td>Suryakumar Yadav</td><td>943</td><td>1,753</td><td>185.90</td><td>156.33</td><td>+29.57</td><td>38.96</td><td>28.2%</td><td>26.7%</td><td>55.9%</td></tr>
+        <tr><td>2</td><td>Dinesh Karthik</td><td>518</td><td>954</td><td>184.17</td><td>95.04</td><td>+89.13</td><td>30.77</td><td>28.2%</td><td>27.4%</td><td>36.8%</td></tr>
+        <tr><td>3</td><td>Rohit Sharma</td><td>235</td><td>418</td><td>177.87</td><td>138.08</td><td>+39.79</td><td>52.25</td><td>27.2%</td><td>28.9%</td><td>56.2%</td></tr>
+        <tr><td>4</td><td>Shashank Singh</td><td>392</td><td>701</td><td>178.83</td><td>121.43</td><td>+57.40</td><td>43.81</td><td>24.2%</td><td>21.9%</td><td>43.2%</td></tr>
+        <tr><td>5</td><td>Tim David</td><td>751</td><td>1,419</td><td>188.95</td><td>159.79</td><td>+29.16</td><td>32.25</td><td>27.6%</td><td>28.4%</td><td>47.4%</td></tr>
+        <tr><td>6</td><td>Rishabh Pant</td><td>430</td><td>769</td><td>178.84</td><td>124.07</td><td>+54.76</td><td>33.43</td><td>26.3%</td><td>28.1%</td><td>51.3%</td></tr>
+        <tr><td>7</td><td>Jos Buttler</td><td>565</td><td>1,016</td><td>179.82</td><td>149.29</td><td>+30.53</td><td>33.87</td><td>25.7%</td><td>23.5%</td><td>58.1%</td></tr>
+        <tr><td>8</td><td>Quinton de Kock</td><td>276</td><td>490</td><td>177.54</td><td>143.41</td><td>+34.13</td><td>40.83</td><td>24.3%</td><td>22.5%</td><td>66.7%</td></tr>
+        <tr><td>9</td><td>Naman Dhir</td><td>264</td><td>515</td><td>195.08</td><td>146.77</td><td>+48.31</td><td>28.61</td><td>29.9%</td><td>25.0%</td><td>43.8%</td></tr>
+        <tr><td>10</td><td>Tristan Stubbs</td><td>689</td><td>1,158</td><td>168.07</td><td>118.07</td><td>+50.00</td><td>41.36</td><td>21.9%</td><td>25.8%</td><td>41.4%</td></tr>
+    </tbody>
+</table>
+
+<h3>Top 10 Bowlers Under Pressure</h3>
+<table>
+    <thead>
+        <tr><th>Rank</th><th>Bowler</th><th>Balls</th><th>Wkts</th><th>P_Econ</th><th>Base_Econ</th><th>ΔEcon</th><th>P_BSR</th><th>Dot%</th><th>Bnd%</th><th>Consist%</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>1</td><td>Sunil Narine</td><td>576</td><td>34</td><td>6.60</td><td>7.02</td><td>+0.42</td><td>16.9</td><td>36.1%</td><td>9.7%</td><td>78.4%</td></tr>
+        <tr><td>2</td><td>Rashid Khan</td><td>1,098</td><td>89</td><td>7.68</td><td>7.27</td><td>-0.41</td><td>12.3</td><td>35.4%</td><td>13.8%</td><td>68.8%</td></tr>
+        <tr><td>3</td><td>Jasprit Bumrah</td><td>710</td><td>49</td><td>7.50</td><td>7.10</td><td>-0.40</td><td>14.5</td><td>35.2%</td><td>14.2%</td><td>67.6%</td></tr>
+        <tr><td>4</td><td>Mohammad Nawaz</td><td>277</td><td>25</td><td>6.17</td><td>7.49</td><td>+1.31</td><td>11.1</td><td>40.1%</td><td>8.7%</td><td>59.3%</td></tr>
+        <tr><td>5</td><td>Mitchell Santner</td><td>602</td><td>42</td><td>7.43</td><td>7.45</td><td>+0.03</td><td>14.3</td><td>35.4%</td><td>12.0%</td><td>66.7%</td></tr>
+        <tr><td>6</td><td>Matheesha Pathirana</td><td>689</td><td>61</td><td>7.93</td><td>8.47</td><td>+0.54</td><td>11.3</td><td>33.7%</td><td>15.5%</td><td>60.8%</td></tr>
+        <tr><td>7</td><td>Varun Chakravarthy</td><td>890</td><td>63</td><td>8.36</td><td>7.76</td><td>-0.60</td><td>14.1</td><td>38.4%</td><td>17.0%</td><td>57.9%</td></tr>
+        <tr><td>8</td><td>Kuldeep Yadav</td><td>757</td><td>51</td><td>8.12</td><td>7.95</td><td>-0.17</td><td>14.8</td><td>33.7%</td><td>14.1%</td><td>68.3%</td></tr>
+        <tr><td>9</td><td>Ravi Bishnoi</td><td>1,105</td><td>70</td><td>8.52</td><td>8.16</td><td>-0.36</td><td>15.8</td><td>36.7%</td><td>16.8%</td><td>58.8%</td></tr>
+        <tr><td>10</td><td>Abrar Ahmed</td><td>281</td><td>19</td><td>6.21</td><td>6.96</td><td>+0.74</td><td>14.8</td><td>41.3%</td><td>9.3%</td><td>63.0%</td></tr>
+    </tbody>
+</table>
+
+</body>
+</html>
